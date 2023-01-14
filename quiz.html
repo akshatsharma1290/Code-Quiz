@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <!-- Font Awesome Cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="quiz-body center">
+    <dialog class="modal">
+      <div class="modal-content">
+        <div class="modal-box">
+          <li>Switching Tabs or any other type of cheating not allowed.</li>
+          <li>You will have 30 seconds to answer each question.</li>
+          <li>Result will be shown at the end.</li>
+          <li>
+            Once you moved to next question, Previous one cannot be changed.
+          </li>
+          <li>You can use up and down keys to move between options</li>
+          <li>You can click enter to move onto next question</li>
+        </div>
+        <button class="close-modal">OK</button>
+      </div>
+    </dialog>
+
+    <dialog class="confirm_exit modal">
+      <div class="modal-content">
+        <div class="modal-box">
+          <p>Are You Sure You Want To Quit?</p>
+        </div>
+        <div class="close-btns">
+          <button class="close-modal quit">
+         Yes
+          </button>
+          <button class="not-quit close-modal">
+          No
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal">
+      <div class="cheat modal-content">
+        <div class="cheat-modal-box modal-box">
+          <p>
+            You have been caught cheating. It's your last warning next time the
+            quiz will resets.
+          </p>
+        </div>
+        <button class="close-modal">OK</button>
+      </div>
+    </dialog>
+
+    <dialog class="modal">
+      <div class="error modal-content">
+        <div class="modal-box">
+          <p>Internet Connection Error!</p>
+        </div>
+        <button class="close-modal">OK</button>
+      </div>
+    </dialog>
+
+    <section id="quiz-bar">
+      <p class="quiz-title">
+        <span class="lang"></span> Quiz | <span class="level"></span>
+      </p>
+      <i class="exit fa-solid fa-circle-xmark"></i>
+    </section>
+
+    <section id="quiz-box">
+      <header>
+        <p class="skeleton-box skeleton-load s">
+          <span class="lang"></span> Quiz
+        </p>
+        <p class="skeleton-load skeleton-box s timer">
+          Time - <span class="time"></span> sec
+        </p>
+      </header>
+      <main>
+        <p class="question skeleton-box skeleton-load s">
+          Q<span class="count"></span> <span class="quest"></span>
+        </p>
+        <div class="multiple-choice">
+          <div class="choice-1 choices skeleton-load sl" data-option="1"></div>
+          <div class="choice-2 choices skeleton-load sl" data-option="2"></div>
+          <div class="choice-3 choices skeleton-load sl" data-option="3"></div>
+          <div class="choice-4 choices skeleton-load sl" data-option="4"></div>
+        </div>
+        <div class="btns">
+          <button class="skeleton-box skeleton-load s next">Next</button>
+        </div>
+      </main>
+    </section>
+
+    <script src="js/quiz.js"></script>
+  </body>
+</html>

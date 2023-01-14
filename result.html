@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Result</title>
+    <!-- External CSS  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <!-- Font Awesome Cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="oveflow-hidden">
+    <dialog class="confirm_exit modal">
+      <div class="modal-content">
+        <div class="modal-box">
+          <p>Are You Sure You Want To Quit?</p>
+        </div>
+        <div class="close-btns">
+          <button class="close-modal quit">Yes</button>
+          <button class="not-quit close-modal">No</button>
+        </div>
+      </div>
+    </dialog>
+
+    <section id="quiz-bar" class="result-bar">
+      <p class="quiz-title">
+        Result of <span class="lang"></span> Quiz | <span class="level"></span>
+      </p>
+      <i class="exit fa-solid fa-circle-xmark"></i>
+    </section>
+
+    <section class="result center">
+      <p class="headings title">RESULT</p>
+      <p class="headings sub-title">
+        You got <span class="right-ans"></span> questions correct from
+        <span class="questions"></span> questions.
+      </p>
+    </section>
+
+    <p class="headings title ans">Answers</p>
+    <section class="result-cards center"></section>
+
+    <script src="js/result.js"></script>
+  </body>
+</html>

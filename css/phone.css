@@ -1,0 +1,149 @@
+@media (width <= 767px) {
+  .logo > img {
+    height: 50px;
+  }
+
+  nav {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    font-size: 16px;
+  }
+  .headings {
+    text-align: center;
+    padding: 0 10px;
+  }
+  .title {
+    font-size: 8vw;
+    margin-top: 20px;
+  }
+  .sub-title {
+    font-size: 7vw;
+  }
+  .quiz-cards {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .card {
+    width: 90vw;
+  }
+  #quiz-bar {
+    height: 65px;
+    padding: 0 15px;
+    font-size: 23px;
+  }
+  .quiz-body {
+    height: 100vh;
+  }
+
+  .modal-content {
+    overflow: hidden;
+  }
+  .modal-box {
+    width: 90vw;
+    font-size: 15px;
+  }
+  .save-wrong {
+    text-align: center;
+  }
+  .confirm_exit .modal-box,
+  .error .modal-box {
+    align-items: center;
+  }
+  .cheat-modal-box {
+    text-align: center;
+  }
+  .close-modal {
+    width: 20vw;
+    font-size: 19px;
+  }
+  #quiz-box {
+    width: 95vw;
+    font-size: 15px;
+  }
+  .next {
+    width: 30vw;
+  }
+
+  .result-bar .quiz-title {
+    font-size: 18px;
+  }
+  .result-cards {
+    margin-top: 35px;
+  }
+
+  /* QuizBuild.html Page Css  */
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  .build-part,
+  .build-heading {
+    width: 95vw;
+  }
+  .build-part {
+    gap: 18px;
+  }
+  .build-heading {
+    height: 50px;
+    font-size: 18px;
+  }
+  .quiz-details-title {
+    font-size: 20px;
+  }
+  .inp {
+    height: 34px;
+    width: 90vw;
+  }
+  .add-btns {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  .add-btns div,
+  .save-btn {
+    width: 95vw;
+    height: 50px;
+  }
+  .rule {
+    top: 259px;
+  }
+  .rule-2 {
+    top: 354px;
+  }
+  .rule-4 {
+    top: 447px;
+  }
+  .question-part {
+    width: 90vw;
+  }
+  .question-container {
+    gap: 25px;
+    padding-bottom: 15px;
+  }
+  .options {
+    width: auto;
+  }
+  .opt {
+    gap: 27px;
+  }
+  .delete-btn {
+    top: 354px;
+  }
+  .td {
+    top: 248px;
+  }
+  .save-quiz-load article {
+    font-size: 7.5vw;
+  }
+  .save-done {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  .save-done a {
+    font-size: 20px;
+  }
+}

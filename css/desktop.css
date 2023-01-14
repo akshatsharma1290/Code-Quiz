@@ -1,0 +1,32 @@
+@media (992px <= width <= 1200px) {
+  .quiz-cards {
+    gap: 15px;
+  }
+  .card {
+    width: 31vw;
+  }
+}
+
+@media (1400px <= width) {
+  html {
+    font-size: 110%;
+  }
+}
+
+@media (1600px <= width) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media (1800px <= width) {
+  html {
+    font-size: 130%;
+  }
+}
+
+@media (1900px <= width) {
+  html {
+    font-size: 140%;
+  }
+}

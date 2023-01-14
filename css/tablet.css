@@ -1,0 +1,40 @@
+@media (576px <= width <= 767px) {
+  nav {
+    padding: 20px;
+  }
+  .logo > img {
+    height: 60px;
+  }
+  .nav-btn {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 6vw;
+  }
+  .sub-title {
+    font-size: 4vw;
+  }
+  .save-quiz-load article {
+    font-size: 7vw;
+  }
+}
+
+@media (768px<= width <= 991px) {
+  nav {
+    padding: 30px;
+  }
+  .card {
+    width: 45vw;
+  }
+  .build-part,
+  .build-heading {
+    width: 85vw;
+  }
+  .inp {
+    width: 60vw;
+  }
+  .add-btns div,
+  .save-btn {
+    width: 42vw;
+  }
+}

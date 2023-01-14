@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Build a Quiz</title>
+    <!-- External Css Link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <!-- Font Awesome Cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+  </head>
+  <body class="quiz-build-body">
+
+<section class="save-quiz-load none">
+<article>Saving Your Quiz <span></span></article>
+<div class="save-done none ">
+<p>Your Quiz has been successfully saved. Thanks For Contributing.</p>
+<p>You can see it on home page</p>
+<a class="home-btn" href="index.html">Go To Home</a>
+</div>
+</section>
+
+    <dialog class="confirm_exit modal">
+      <div class="modal-content">
+        <div class="modal-box">
+          <p>Are You Sure You Want To Quit?</p>
+        </div>
+        <div class="close-btns">
+          <button class="close-modal quit">
+Yes          </button>
+          <button class="not-quit close-modal">
+No          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="custom-time modal">
+      <div class="modal-content">
+        <div class="modal-box">
+          <p>Enter time in seconds</p>
+          <input
+            class="modal-time-inp inp"
+            type="number"
+            name="custom-time"
+            id="custom-time"
+          />
+        </div>
+        <div class="close-btns">
+          <button class="close-modal">
+OK          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal">
+      <div class="error modal-content">
+        <div class="modal-box">
+          <p>Internet Connection Error!</p>
+        </div>
+        <button class="close-modal">OK</button>
+      </div>
+    </dialog>
+
+    <dialog class="modal">
+      <div class=" modal-content">
+        <div class="modal-box save-wrong">
+          <p>You have not filled all the details or may have filled inappropriate.</p>
+        </div>
+        <button class="close-modal">OK</button>
+      </div>
+    </dialog>
+
+    <section id="quiz-bar" class="bar">
+      <p class="quiz-title">Quiz Builder</p>
+      <i class="exit fa-solid fa-circle-xmark"></i>
+    </section>
+
+    <section id="quiz-details">
+      <div class="build-wrapper">
+        <div class="build-part-1 desktop build-part">
+          <p class="build-heading">Quiz Details</p>
+          <div class="container">
+            <div class="right-titles">
+              <p>Quiz Name</p>
+              <p>Quiz Level</p>
+              <p>Timing</p>
+            </div>
+            <div class="left-inps">
+              <input
+                class="inp qd all quiz-inp quiz-name details"
+                placeholder="HTML"
+                type="text"
+                name="quiz-name"
+                id="quiz-name"
+              />
+              <span class="rule none"
+                >Quiz title can only contain 15 characters.</span
+              >
+
+              <select
+                class="inp quiz-inp all qd details dropdown"
+                name="quiz-level"
+                id="quiz-level"
+              >
+                <option value="Choose-Level">Choose Level</option>
+                <option value="Very Easy">Very Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Easy">Normal</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Extreme">Extreme</option>
+              </select>
+              <span class="rule rule-2 none">Please Select a Level.</span>
+
+             
+
+              <select
+                class="inp quiz-inp details all qd timing dropdown"
+                name="timing"
+                id="timing"
+              >
+                <option value="Timing">Timing for each question</option>
+                <option value="30">30sec</option>
+                <option value="40">40sec</option>
+                <option value="60">60sec</option>
+                <option value="custom">Custom Time</option>
+              </select>
+              <span class="rule rule-4 none">Please set timing state.</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="build-part-1 mobile build-part">
+          <p class="build-heading">Quiz Details</p>
+           
+              <p class="quiz-details-title">Quiz Name</p>
+              <input
+              class="inp all qd quiz-inp quiz-name details"
+              placeholder="HTML"
+              type="text"
+                name="quiz-name"
+                id="quiz-name"
+              />
+              <span class="rule none"
+                >Quiz title can only contain 15 characters.</span
+              >
+              <p class="quiz-details-title">Quiz Level</p>
+
+              <select
+                class="inp all quiz-inp qd details dropdown"
+                name="quiz-level"
+                id="quiz-level"
+              >
+                <option value="Choose-Level">Choose Level</option>
+                <option value="Very Easy">Very Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Easy">Normal</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Extreme">Extreme</option>
+              </select>
+              <span class="rule rule-2 none">Please Select a Level.</span>
+              <p class="quiz-details-title">Timing</p>
+             
+
+              <select
+                class="inp all quiz-inp details qd timing dropdown"
+                name="timing"
+                id="timing"
+              >
+                <option value="Timing">Timing for each question</option>
+                <option value="30">30sec</option>
+                <option value="40">40sec</option>
+                <option value="60">60sec</option>
+                <option value="custom">Custom Time</option>
+              </select>
+              <span class="rule rule-4 none">Please set timing state.</span>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="add-btns">
+
+        <div class="add-mcq">Add MCQ</div>
+        <div class="add-true-false">Add True-False</div>
+      </div>
+      <div class="save-btn none">Save Quiz</div>
+    </section>
+    <script src="js/quizbuild.js"></script>
+  </body>
+</html>

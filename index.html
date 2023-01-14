@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Code Quiz | Quiz Builder</title>
+    <!-- External Css Link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+    <!-- Font Awesome Cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+  </head>
+  <body>
+    <section class="load center">
+      <img src="gif/Wedges-3s-200px.png" alt="" />
+    </section>
+
+    <header>
+      <nav class="center">
+        <div class="logo"><img src="images/logo.png" alt="quiz-logo" /></div>
+        <a href="quizbuild.html" class="nav-btn">Make your own quiz</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="quiz" class="center">
+        <h1 class="headings title">Welcome to the Ultimate Coding Quiz</h1>
+        <h2 class="headings sub-title">Which quiz you want to attempt?</h2>
+        <div class="quiz-cards center">
+          <div class="quiz-1 card">
+            <p class="quiz-name">HTML</p>
+            <article class="quiz-desc">
+              Html is used to build websites structure. Let's see how many html
+              knowledge you got.
+            </article>
+            <div class="difficulty">
+              <p>Choose Difficulty Level</p>
+              <a
+                href="quiz.html"
+                class="level-1 levels"
+                data-level="Easy"
+                data-lang="HTML"
+                data-quiz="premade"
+                >Easy <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-2 levels"
+                data-level="Medium"
+                data-lang="HTML"
+                data-quiz="premade"
+                >Medium <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-3 levels"
+                data-level="Hard"
+                data-lang="HTML"
+                data-quiz="premade"
+                >Hard <i class="fa-solid fa-circle-play"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="quiz-2 card">
+            <p class="quiz-name">CSS</p>
+            <article class="quiz-desc">
+              Css is used to style, animate web pages. Let's see how many
+              styling knowlege you got.
+            </article>
+            <div class="difficulty">
+              <p>Choose Difficulty Level</p>
+              <a
+                href="quiz.html"
+                class="level-1 levels"
+                data-level="Easy"
+                data-lang="CSS"
+                data-quiz="premade"
+                >Easy <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-2 levels"
+                data-level="Medium"
+                data-lang="CSS"
+                data-quiz="premade"
+                >Medium <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-3 levels"
+                data-level="Hard"
+                data-lang="CSS"
+                data-quiz="premade"
+                >Hard <i class="fa-solid fa-circle-play"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="quiz-3 card">
+            <p class="quiz-name">Javascript</p>
+            <article class="quiz-desc">
+              Javascript is used to make web pages interactive. Let's see how
+              many scripting knowledge you got.
+            </article>
+            <div class="difficulty">
+              <p>Choose Difficulty Level</p>
+              <a
+                href="quiz.html"
+                class="level-1 levels"
+                data-level="Easy"
+                data-lang="Javascript"
+                data-quiz="premade"
+                >Easy <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-2 levels"
+                data-level="Medium"
+                data-lang="Javascript"
+                data-quiz="premade"
+                >Medium <i class="fa-solid fa-circle-play"></i
+              ></a>
+              <a
+                href="quiz.html"
+                class="level-3 levels"
+                data-level="Hard"
+                data-lang="Javascript"
+                data-quiz="premade"
+                >Hard <i class="fa-solid fa-circle-play"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
