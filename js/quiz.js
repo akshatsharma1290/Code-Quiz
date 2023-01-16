@@ -149,7 +149,7 @@ exit.addEventListener("click", () => {
     })
     close_modal[1].addEventListener("click", () => {
         modal[1].close()
-        window.location.pathname = "index.html"
+        window.location.href = "index.html"
         sessionStorage.clear()
     })
 
@@ -300,7 +300,7 @@ const runQuiz = async () => {
         modal[3].showModal()
         close_modal[4].addEventListener("click", () => {
             modal[3].close()
-            window.location.pathname = "index.html"
+            window.location.href = "index.html"
         })
 
     }
@@ -368,7 +368,7 @@ const showNext = () => {
     // Going to result.html when all questions are done 
     if (count > question_limit) {
         sessionStorage.setItem("userans", JSON.stringify(userObj))
-        window.location.pathname = "result.html"
+        window.location.href = "result.html"
     }
     nextAnimate()
     settingValues()
@@ -402,7 +402,7 @@ const switchTab = () => {
                 modal[2].showModal()
                 close_modal[3].addEventListener("click", () => {
                     modal[2].close()
-                    window.location.pathname = "index.html"
+                    window.location.href = "index.html"
                     sessionStorage.setItem("usercheat", 0)
                     startTimer()
                 })
