@@ -46,7 +46,7 @@ exit.addEventListener("click", () => {
   })
   close_modal[0].addEventListener("click", () => {
     modal[0].close()
-    window.location.pathname = "index.html"
+    window.location.href = "index.html"
     sessionStorage.clear()
   })
 
@@ -250,7 +250,7 @@ const formDataFill = async () => {
       }
 
     } else {
-      
+
       form.append(`q${i}option1`, "True")
       form.append(`q${i}option2`, "False")
     }
@@ -285,8 +285,8 @@ const save_load = (a, b) => {
 }
 
 
-homeBtn.addEventListener("click" , ()=>{
-  sessionStorage.setItem("quizmade" , "yes")
+homeBtn.addEventListener("click", () => {
+  sessionStorage.setItem("quizmade", "yes")
 })
 
 
@@ -296,23 +296,23 @@ let save_it = true
 save_btn.addEventListener("click", async () => {
   const all_values = Array.from(document.querySelectorAll(".all"))
 
-  all_values.forEach((e)=>{
-    if(e.value.includes("Choose") || e.value == "" || e.value.includes("Timing")){
+  all_values.forEach((e) => {
+    if (e.value.includes("Choose") || e.value == "" || e.value.includes("Timing")) {
       save_it = false
     }
   })
 
-  if(document.querySelector(".timing").value.includes("-")){
+  if (document.querySelector(".timing").value.includes("-")) {
     save_it = false
   }
 
   // if all things are filled than showing Animation else showing modal
-  if(save_it){
+  if (save_it) {
 
     formDataFill()
     save_load(save_quiz_span, 500)
     try {
-      
+
       await fetch(url, {
         method: "POST",
         body: form
@@ -320,18 +320,16 @@ save_btn.addEventListener("click", async () => {
       quiz_saved = "done"
     } catch (error) {
       modal[2].showModal()
-      close_modal[3].addEventListener("click" , ()=>{
-        location.href = "index.html"
+      close_modal[3].addEventListener("click", () => {
+        window.location.href = "index.html"
       })
     }
-  }else{
+  } else {
     modal[3].showModal()
-    close_modal[4].addEventListener("click" , ()=>{
-        modal[3].close()
+    close_modal[4].addEventListener("click", () => {
+      modal[3].close()
     })
     save_it = true
   }
 
 })
-
-
