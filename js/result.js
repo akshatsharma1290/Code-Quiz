@@ -16,7 +16,7 @@ exit.addEventListener("click", () => {
     modal.showModal()
     close_modal.addEventListener("click", () => {
         modal.close()
-        window.location.pathname = "index.html"
+        window.location.href = "index.html"
         sessionStorage.clear()
     })
     notClose_modal.addEventListener("click", () => {
@@ -166,29 +166,29 @@ for (let i = 0; i < quiz_box.length; i++) {
 
     options = Array.from(quiz_box[i].querySelectorAll(".choices"))
     att = Array.from(quiz_box[i].querySelectorAll(".attempt"))
-    if(clicked_quiz == "premade"){
+    if (clicked_quiz == "premade") {
 
         for (const k of options) {
-            
+
             if (k.dataset.option == data[i + 1]['answer']) {
                 k.classList.add("right")
             } else if (k.dataset.option == userAns[i + 1] && k.dataset.option != data[i + 1]['answer']) {
                 k.classList.add("wrong")
-                
+
             }
-            
+
         }
-    }else{
+    } else {
         for (const k of options) {
-            
+
             if (k.dataset.option == data[`question${i+1}Answer`]) {
                 k.classList.add("right")
             } else if (k.dataset.option == userAns[i + 1] && k.dataset.option != data[`question${i+1}Answer`]) {
                 k.classList.add("wrong")
-                
+
             }
-            
-        }   
+
+        }
     }
 
 
