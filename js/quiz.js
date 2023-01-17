@@ -173,7 +173,7 @@ const removeSkeleton = () => {
 // Fetching data from google sheets 
 
 // Google Sheets Api of premade quizzes 
-const sheet_Api = "https://script.google.com/macros/s/AKfycbzBzkxxQlgj-Z7ct7vuiSCbWz8maEAgnrbvUL9YHPOspfNRtjs-ZN7RWGjrY-nlrOo/exec"
+const sheet_Api = "https://script.google.com/macros/s/AKfycbyoHN4Z5bRxHIs4sa6fjafU5OiGsLxsF6Y0veasl-qp8o-HXi7fdLuiJw7pI0uyD6fV/exec"
 
 // Google Sheets Api of quizzes made by users 
 const userSheet_Api = "https://script.google.com/macros/s/AKfycbzVXeOcniqSx1Z3a9Cu3euBuhbviGq97-MGFkKct8O78-pZw4RaGInW7G3cmGvyQXFUmA/exec"
