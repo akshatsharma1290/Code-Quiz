@@ -8,7 +8,7 @@ const rightAns = document.querySelector(".right-ans")
 const ques = document.querySelector(".questions")
 const sub_title = document.querySelector(".sub-title")
 const result_cards = document.querySelector(".result-cards")
-let questions = 25;
+let questions;
 
 
 // Modal to exit result page 
@@ -30,14 +30,10 @@ let clicked_lang = sessionStorage.getItem("clicked_lang")
 let clicked_level = sessionStorage.getItem("clicked_level")
 let clicked_quiz = sessionStorage.getItem("clicked_quiz")
 
-if (clicked_quiz == "user") {
-    questions = Number(sessionStorage.getItem("question_limit"))
-    ques.textContent = questions
+questions = Number(sessionStorage.getItem("question_limit"))
+ques.textContent = questions
 
-} else {
-    ques.textContent = questions
 
-}
 
 quiz_lang.forEach((el) => {
     el.textContent = clicked_lang;
@@ -52,33 +48,19 @@ let userAns = JSON.parse(sessionStorage.getItem("userans"))
 let data = JSON.parse(sessionStorage.getItem("quiz-data"))
 let rightAnswers = 0
 let rightAnsObj = []
-// Checking The Users Answers with Right Answers based on if it's premade or made by user bcz both have different format to access them 
+// Checking The Users Answers with Right Answers 
 
-if (clicked_quiz == "premade") {
+for (let i = 1; i <= questions; i++) {
 
-    for (let i = 1; i <= questions; i++) {
-
-        if (data[i]['answer'] == userAns[i]) {
-            rightAnswers++
-            rightAnsObj.push(true)
-        } else {
-            rightAnsObj.push(false)
-        }
-
+    if (data[`question${i}Answer`] == userAns[i]) {
+        rightAnswers++
+        rightAnsObj.push(true)
+    } else {
+        rightAnsObj.push(false)
     }
-} else {
 
-    for (let i = 1; i <= questions; i++) {
-
-        if (data[`question${i}Answer`] == userAns[i]) {
-            rightAnswers++
-            rightAnsObj.push(true)
-        } else {
-            rightAnsObj.push(false)
-        }
-
-    }
 }
+
 
 // Showing the result based on right questions 
 if (rightAnswers == questions) {
@@ -130,21 +112,14 @@ const choice_3 = Array.from(document.querySelectorAll(".choice-3"))
 const choice_4 = Array.from(document.querySelectorAll(".choice-4"))
 
 for (let i = 1; i <= questions; i++) {
-    if (clicked_quiz == "premade") {
 
-        quest[i - 1].textContent = data[i]['question']
-        choice_1[i - 1].textContent = data[i]['option1']
-        choice_2[i - 1].textContent = data[i]['option2']
-        choice_3[i - 1].textContent = data[i]['option3']
-        choice_4[i - 1].textContent = data[i]['option4']
-    } else {
-        quest[i - 1].textContent = data[`question${i}`]
-        choice_1[i - 1].textContent = data[`q${i}option1`]
-        choice_2[i - 1].textContent = data[`q${i}option2`]
-        choice_3[i - 1].textContent = data[`q${i}option3`]
-        choice_4[i - 1].textContent = data[`q${i}option4`]
+    quest[i - 1].textContent = data[`question${i}`]
+    choice_1[i - 1].textContent = data[`q${i}option1`]
+    choice_2[i - 1].textContent = data[`q${i}option2`]
+    choice_3[i - 1].textContent = data[`q${i}option3`]
+    choice_4[i - 1].textContent = data[`q${i}option4`]
 
-    }
+
 
     if (choice_3[i - 1].textContent == "" && choice_4[i - 1].textContent == "") {
         choice_3[i - 1].classList.add("none")
@@ -166,36 +141,24 @@ for (let i = 0; i < quiz_box.length; i++) {
 
     options = Array.from(quiz_box[i].querySelectorAll(".choices"))
     att = Array.from(quiz_box[i].querySelectorAll(".attempt"))
-    if (clicked_quiz == "premade") {
 
-        for (const k of options) {
+    for (const k of options) {
 
-            if (k.dataset.option == data[i + 1]['answer']) {
-                k.classList.add("right")
-            } else if (k.dataset.option == userAns[i + 1] && k.dataset.option != data[i + 1]['answer']) {
-                k.classList.add("wrong")
-
-            }
+        if (k.dataset.option == data[`question${i+1}Answer`]) {
+            k.classList.add("right")
+        } else if (k.dataset.option == userAns[i + 1] && k.dataset.option != data[`question${i+1}Answer`]) {
+            k.classList.add("wrong")
 
         }
-    } else {
-        for (const k of options) {
 
-            if (k.dataset.option == data[`question${i+1}Answer`]) {
-                k.classList.add("right")
-            } else if (k.dataset.option == userAns[i + 1] && k.dataset.option != data[`question${i+1}Answer`]) {
-                k.classList.add("wrong")
-
-            }
-
-        }
     }
+
 
 
 
     for (const j of att) {
         if (userAns[i + 1] == undefined) {
-            j.textContent = "Not Attempted"
+            j.innerHTML = `<span style="color:rgb(247, 48, 48);"><strong>Not Attempted</strong></span>`
         }
     }
 
