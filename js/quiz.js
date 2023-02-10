@@ -19,10 +19,10 @@ let f;
 let response;
 let options = []
 let answer;
-let card_timer = 30
+let card_timer
 let timer_limit = 0
 let count = 1;
-let question_limit = 25
+let question_limit
 let selected
 let index
 
@@ -31,11 +31,8 @@ let index
 let clicked_lang = sessionStorage.getItem("clicked_lang")
 let clicked_level = sessionStorage.getItem("clicked_level")
 let clicked_quiz = sessionStorage.getItem("clicked_quiz")
-let quiz_id
-if (clicked_quiz == "user") {
-    quiz_id = Number(sessionStorage.getItem("quiz_id"))
+let quiz_id = Number(sessionStorage.getItem("quiz_id"))
 
-}
 
 // Clearing no-useable sessionStorage Storage
 sessionStorage.clear()
@@ -172,65 +169,42 @@ const removeSkeleton = () => {
 
 // Fetching data from google sheets 
 
-// Google Sheets Api of premade quizzes 
-const sheet_Api = "https://script.google.com/macros/s/AKfycbyoHN4Z5bRxHIs4sa6fjafU5OiGsLxsF6Y0veasl-qp8o-HXi7fdLuiJw7pI0uyD6fV/exec"
-
-// Google Sheets Api of quizzes made by users 
+// Google Sheets Api of quizzes 
 const userSheet_Api = "https://script.google.com/macros/s/AKfycbzVXeOcniqSx1Z3a9Cu3euBuhbviGq97-MGFkKct8O78-pZw4RaGInW7G3cmGvyQXFUmA/exec"
 
 
-// Fetching Data based on if it is premade or made by users
-const fetchData = async () => {
-    if (clicked_quiz == "premade") {
-        f = await fetch(sheet_Api)
-        response = await f.json()
-        return response
-    } else {
+// Fetching Data 
+const fetchData = async () => {    
         f = await fetch(userSheet_Api)
         response = await f.json()
         return response
 
-    }
-
 }
 
 
-// Storing the Fetched data  based on if it is premade or made by users to check answers on result.html
+// Storing the Fetched data to check answers on result.html
 let data
 const storeData = () => {
-    if (clicked_quiz == "premade") {
-        sessionStorage.setItem("quiz-data", JSON.stringify(response[`${clicked_lang}_${clicked_level}`]));
-        data = JSON.parse(sessionStorage.getItem("quiz-data"))
-    } else {
-        sessionStorage.setItem("quiz-data", response['data'][0]['obj'][quiz_id])
+       sessionStorage.setItem("quiz-data", response['data'][0]['obj'][quiz_id])
         data = JSON.parse(sessionStorage.getItem("quiz-data"))
         question_limit = Number(data['question-limit'])
         sessionStorage.setItem("question_limit", question_limit)
         card_timer = Number(data['timing'])
-    }
-
+    
 }
 
 
 
-// Setting values of question and answers bases on if it is premade or made by users
+// Setting values of question and answers
 const settingValues = () => {
     count_question.textContent = count;
 
-    if (clicked_quiz == "premade") {
-        question.textContent = data[count]['question'];
-        for (let i = 0; i < choice.length; i++) {
-
-            choice[i].textContent = data[count][`option${i + 1}`]
-
-        }
-    } else {
         question.textContent = data[`question${count}`]
         for (let i = 1; i <= choice.length; i++) {
 
             choice[i - 1].textContent = data[`q${count}option${i}`]
 
-        }
+        
     }
 
     // checking the options available and showing them
@@ -277,6 +251,7 @@ const resetTimer = () => {
 const loadRules = async () => {
 
     modal[0].showModal()
+    document.querySelector(".perquestion-time").textContent = data['timing']
     close_modal[0].addEventListener("click", () => {
         modal[0].close()
         startTimer()
