@@ -95,9 +95,14 @@ timing.forEach((e) => {
 })
 
 
-// Showing The button to save quiz when user adds a question
-const visibleSave = () => {
+// Showing The button to save quiz and add level when user have minimum 1 question
+const visibleBtn = () => {
   save_btn.classList.remove("none")
+}
+
+const hideBtn = () => {
+  save_btn.classList.add("none")
+
 }
 
 // Deleting the Question and decrementing the question count 
@@ -112,15 +117,20 @@ const deleteQuestion = () => {
         "unwanted Error"
       }
       question_count--
+      if (question_count == 0) {
+        hideBtn()
+      }
     })
   })
 }
 
 
+
+
 // Inserting A MCQ Question into the html 
 const addMcq = () => {
   question_count++
-  visibleSave()
+  visibleBtn()
   wrapper.insertAdjacentHTML("beforeend", `<div class="build-part-${question_count + 1} build-part">
     <div class="build-heading">MCQ</div>
     <div class="container question-container">
@@ -183,7 +193,7 @@ const addMcq = () => {
 
 // Inserting A True False Question into the html 
 const addTF = () => {
-  visibleSave()
+  visibleBtn()
   question_count++
   wrapper.insertAdjacentHTML("beforeend", `<div class="build-part-${question_count + 1} build-part">
 <div class="build-heading">True-False</div>
@@ -297,7 +307,7 @@ save_btn.addEventListener("click", async () => {
   const all_values = Array.from(document.querySelectorAll(".all"))
 
   all_values.forEach((e) => {
-    if (e.value.includes("Choose") || e.value == "" || e.value.includes("Timing")) {
+    if (e.value == "" || e.value.includes("Timing")) {
       save_it = false
     }
   })
@@ -333,3 +343,44 @@ save_btn.addEventListener("click", async () => {
   }
 
 })
+
+
+// const ap = "https://script.google.com/macros/s/AKfycbyoHN4Z5bRxHIs4sa6fjafU5OiGsLxsF6Y0veasl-qp8o-HXi7fdLuiJw7pI0uyD6fV/exec"
+// let f
+// let response
+// const fetchData = async () => {
+//       f = await fetch(ap)
+//       response = await f.json()
+//       return response
+
+// }
+// let m
+// let n
+// let mn 
+
+// const putQuestion = async ()=>{
+// await fetchData()
+//  m = prompt("enter quiz name")
+//  n = prompt("enter level")
+//  document.getElementsByTagName("input")[1].value = m
+//  document.getElementsByTagName("select")[0].value = n
+//  document.getElementsByTagName("select")[1].value = 30
+//  mn = `${m}_${n}`
+// let range1  = Number(prompt("range1"))
+// let range2  = Number(prompt("range2"))
+// let b = 1
+// for (let i = range1; i <=range2; i++) {
+// document.querySelector(".add-mcq").click()
+// document.querySelector(`.question_${b}`).textContent = response[mn][b]['question']
+// document.querySelector(`.question${b}_option_1`).value = response[mn][b]['option1']
+// document.querySelector(`.question${b}_option_2`).value = response[mn][b]['option2']
+// document.querySelector(`.question${b}_option_3`).value = response[mn][b]['option3']
+// document.querySelector(`.question${b}_option_4`).value = response[mn][b]['option4']
+// document.querySelector(`.question${b}_answer`).value = response[mn][b]['answer']
+// b++
+
+// }
+
+
+
+// }
