@@ -36,16 +36,16 @@ let url = "https://script.google.com/macros/s/AKfycbzVXeOcniqSx1Z3a9Cu3euBuhbviG
 
 let f
 let resp
-const fetchUserQuiz = async () => {
+const fetchQuiz = async () => {
     f = await fetch(url)
     resp = await f.json()
     return resp
 }
 
 let data
-const showingUserQuiz = async () => {
+const showingQuiz = async () => {
     try {
-        await fetchUserQuiz()
+        await fetchQuiz()
         // Adding Users Quizzes into html 
         for (let i = 0; i < resp['data'][0]['obj'].length; i++) {
             data = JSON.parse(resp['data'][0]['obj'][i])
@@ -55,13 +55,12 @@ const showingUserQuiz = async () => {
              Let's see how much ${data['quiz-name']} knowledge you got
             </article>
             <div class="difficulty">
-              <p>Choose Difficulty Level</p>
+              <p>Difficulty Level</p>
               <a
                 href="quiz.html"
                 class="levels"
                 data-level="${data['quiz-level']}"
                 data-lang="${data['quiz-name']}"
-                data-quiz="user"
                 data-id="${i}"
                 > ${data['quiz-level']} <i class="fa-solid fa-circle-play"></i
               ></a>
@@ -71,7 +70,6 @@ const showingUserQuiz = async () => {
 
         windowLoad()
     } catch (error) {
-        alert("Quizes Made by Users Are not Fetched")
     }
 
     loader.classList.add("none")
@@ -81,4 +79,4 @@ const showingUserQuiz = async () => {
 }
 
 
-showingUserQuiz()
+showingQuiz()
