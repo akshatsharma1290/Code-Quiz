@@ -13,9 +13,9 @@ const windowLoad = () => {
             sessionStorage.setItem("clicked_lang", e.dataset.lang);
             sessionStorage.setItem("clicked_level", e.dataset.level);
             sessionStorage.setItem("clicked_quiz", e.dataset.quiz);
-            if (e.dataset.quiz == "user") {
+            
                 sessionStorage.setItem("quiz_id", e.dataset.id)
-            }
+            
 
         });
     });
