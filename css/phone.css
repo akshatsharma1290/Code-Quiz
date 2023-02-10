@@ -24,6 +24,7 @@
   .quiz-cards {
     flex-direction: column;
     padding-bottom: 20px;
+    align-items: center !important;
   }
   .card {
     width: 90vw;
